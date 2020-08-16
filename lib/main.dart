@@ -27,7 +27,9 @@ class dApp extends StatelessWidget {
                   controller: name,
                   decoration: InputDecoration(
                     hintText: "Enter your name",
-                    border: OutlineInputBorder(),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(50.0)
+                    ),
                     prefixIcon: Icon(Icons.account_box)
                 ),
                 ),
@@ -38,7 +40,9 @@ class dApp extends StatelessWidget {
                       decoration: InputDecoration(
                       hintText: "Roll Number",
                     prefixIcon: Icon(Icons.contacts),
-                    border: OutlineInputBorder()
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(50.0)
+                    )
                 ),),
                 SizedBox(height: 20.0,),
                 //Text("ADMISSION NO. : ",textAlign: TextAlign.left,),
@@ -47,7 +51,9 @@ class dApp extends StatelessWidget {
                   decoration: InputDecoration(
                   hintText: "Admission Number",
                  prefixIcon: Icon(Icons.featured_video),
-                 border: OutlineInputBorder()
+                 border: OutlineInputBorder(
+                   borderRadius: BorderRadius.circular(50.0)
+                 )
                 ),),
                 SizedBox(height: 20.0,),
                 //Text("COLLEGE : ",textAlign: TextAlign.left,),
@@ -56,23 +62,35 @@ class dApp extends StatelessWidget {
                   decoration: InputDecoration(
                     hintText: "College Name",
                     prefixIcon: Icon(Icons.account_balance),
-                    border: OutlineInputBorder()
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(50.0)
+                    )
                 ),),
                 SizedBox(height: 20.0,),
-                RaisedButton(
-                  onPressed: (){
-                    var uname = name.text;
-                    var rno = rollno.text;
-                    var adno = admnno.text;
-                    var cname = clg.text;
-                    print(uname);
-                    print(rno);
-                    print(adno);
-                    print(cname);
-                  },
-
-                  color: Colors.cyanAccent,
-                  child: Text("SUBMIT"),)
+//                RaisedButton(
+//                  onPressed: (){
+//                    var uname = name.text;
+//                    var rno = rollno.text;
+//                    var adno = admnno.text;
+//                    var cname = clg.text;
+//                    print(uname);
+//                    print(rno);
+//                    print(adno);
+//                    print(cname);
+//                  },
+//
+//                  color: Colors.cyanAccent,
+//                  child: Text("SUBMIT"),)
+              Container(
+                height: 50.0,
+                width: 100.0,
+                
+                child: Center(child:Text("Login")),
+                decoration: BoxDecoration(
+                  color: Colors.green,
+                  borderRadius: BorderRadius.circular(50.0)
+                ),
+              )
               ],
             )
         ),
