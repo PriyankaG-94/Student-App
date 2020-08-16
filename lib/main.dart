@@ -5,6 +5,10 @@ void main(){
   runApp(dApp());
 }
 class dApp extends StatelessWidget {
+  TextEditingController name = TextEditingController();
+  TextEditingController admnno = TextEditingController();
+  TextEditingController rollno = TextEditingController();
+  TextEditingController clg = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -19,7 +23,9 @@ class dApp extends StatelessWidget {
             child: Column(
               children: <Widget>[
 
-                TextField(decoration: InputDecoration(
+                TextField(
+                  controller: name,
+                  decoration: InputDecoration(
                     hintText: "Enter your name",
                     border: OutlineInputBorder(),
                     prefixIcon: Icon(Icons.account_box)
@@ -27,28 +33,44 @@ class dApp extends StatelessWidget {
                 ),
                 SizedBox(height: 20.0,),
 //Text("ROLL NO : ",textAlign: TextAlign.left,),
-                    TextField(decoration: InputDecoration(
+                    TextField(
+                      controller: rollno,
+                      decoration: InputDecoration(
                       hintText: "Roll Number",
                     prefixIcon: Icon(Icons.contacts),
                     border: OutlineInputBorder()
                 ),),
                 SizedBox(height: 20.0,),
                 //Text("ADMISSION NO. : ",textAlign: TextAlign.left,),
-                TextField(decoration: InputDecoration(
+                TextField(
+                  controller: admnno,
+                  decoration: InputDecoration(
                   hintText: "Admission Number",
                  prefixIcon: Icon(Icons.featured_video),
                  border: OutlineInputBorder()
                 ),),
                 SizedBox(height: 20.0,),
                 //Text("COLLEGE : ",textAlign: TextAlign.left,),
-                TextField(decoration: InputDecoration(
+                TextField(
+                  controller: clg,
+                  decoration: InputDecoration(
                     hintText: "College Name",
                     prefixIcon: Icon(Icons.account_balance),
                     border: OutlineInputBorder()
                 ),),
                 SizedBox(height: 20.0,),
                 RaisedButton(
-                  onPressed: (){},
+                  onPressed: (){
+                    var uname = name.text;
+                    var rno = rollno.text;
+                    var adno = admnno.text;
+                    var cname = clg.text;
+                    print(uname);
+                    print(rno);
+                    print(adno);
+                    print(cname);
+                  },
+
                   color: Colors.cyanAccent,
                   child: Text("SUBMIT"),)
               ],
